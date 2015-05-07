@@ -1,0 +1,104 @@
+package allEquations;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.Scanner;
+
+public class Quadratic {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Quadratic window = new Quadratic();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Quadratic() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 642, 248);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.print("Enter a: ");
+				Scanner keyInput = new Scanner(System.in);
+				int a = keyInput.nextInt();
+				keyInput =  null;
+				System.out.println();
+		//declaring a
+				System.out.print("Enter b: ");
+				Scanner keyInput1 = new Scanner(System.in);
+				int b = keyInput1.nextInt();
+				keyInput1 = null;
+				System.out.println();
+		//declaring b
+				System.out.print("Enter c: ");
+				Scanner keyInput2 = new Scanner(System.in);
+				int c = keyInput2.nextInt();
+				keyInput2 = null;
+				System.out.println();
+		//declaring c
+				double part1 = (b * b) - 4 * a * c;
+				if (part1 >= 0){
+					double y = ((-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a));
+			        double y1 = ((-b - Math.sqrt((b * b) - (4 * a * c))) / (2 * a));
+			        System.out.println("y = " + y);
+			        System.out.println("y = " + y1);
+				} else {
+					part1 = part1 * -1;
+					System.out.println("y = " + (-b) + "+-" + " i " + "sqrt( " + part1 + " )" + "/" + (2 * a));
+			        	
+			    }
+			}
+		});
+		textField.setBounds(10, 107, 608, 92);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblQuadraticForumlaTool = new JLabel("Quadratic Forumla Tool!");
+		lblQuadraticForumlaTool.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblQuadraticForumlaTool.setBounds(213, 11, 202, 31);
+		frame.getContentPane().add(lblQuadraticForumlaTool);
+		
+		JLabel lblRememberThat = new JLabel("Remember That:");
+		lblRememberThat.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblRememberThat.setBounds(213, 34, 170, 31);
+		frame.getContentPane().add(lblRememberThat);
+		
+		JLabel lblNewLabel = new JLabel("ax\u00B2 + bx + c = 0\r\n");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(213, 72, 170, 24);
+		frame.getContentPane().add(lblNewLabel);
+	}
+}

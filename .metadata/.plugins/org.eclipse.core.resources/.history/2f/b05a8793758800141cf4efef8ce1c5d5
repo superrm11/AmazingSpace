@@ -1,0 +1,14 @@
+package allEquations;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] arg){
+		Scanner keyInput = new Scanner(System.in);
+		System.out.print("State the Formula Needed:");
+		do{
+			if (keyInput.hasNext("quadratic")){
+				AllEquations.quad
+		}
+	}
+}

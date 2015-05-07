@@ -1,0 +1,36 @@
+INFO  2015-05-06 20:46:41,645 (Saros.java:256) Starting Saros 13.12.6 running:
+  Java Version: 1.8.0_40
+  Java Vendor: Oracle Corporation
+  Eclipse Runtime Version: 3.10.0.v20140318-2214
+  Operating System: Windows 7 (6.1)
+  Hardware Architecture: x86
+INFO  2015-05-06 20:46:41,692 (XMPPAccountStore.java:103) loaded 1 accounts
+INFO  2015-05-06 20:46:41,723 (PreferenceInitializer.java:53) initializing preference default values
+DEBUG 2015-05-06 20:46:41,739 (DataTransferManager.java:444) used transport order for the current XMPP connection: [de.fu_berlin.inf.dpp.net.internal.Socks5Transport@618775, de.fu_berlin.inf.dpp.net.internal.IBBTransport@ea8994]
+DEBUG 2015-05-06 20:46:41,817 (StreamServiceManager.java:225) StreamServices added:
+  SendFile
+  AudioService
+  VideoSharing
+DEBUG 2015-05-06 20:46:41,895 (SarosAnnotation.java:112) resetting annotation colors
+WARN  2015-05-06 20:46:42,285 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:46:42,285 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-05-06 20:46:54,128 (SharedDocumentProvider.java:79) SharedDocumentProvider created by Eclipse
+WARN  2015-05-06 20:46:59,434 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:46:59,450 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-05-06 20:47:00,870 (WhiteboardManager.java:108) WhiteboardManager instantiated
+DEBUG 2015-05-06 20:47:00,885 (DocumentRecord.java:93) Added Node: attr(14309596208851661) name=svg
+DEBUG 2015-05-06 20:47:01,213 (UPnPServiceImpl.java:225) performing gateways discovery
+DEBUG 2015-05-06 20:47:01,494 (SarosNet.java:423) started Socks5 proxy on port: 7777 [listening on all interfaces]
+DEBUG 2015-05-06 20:47:01,650 (SarosNet.java:433) found interface addresses: [192.168.1.10, fe80:0:0:0:344c:f76:f1b4:6860%wlan0]
+DEBUG 2015-05-06 20:47:01,696 (SarosNet.java:383)  new connection state == CONNECTING
+INFO  2015-05-06 20:47:01,930 (UPnPServiceImpl.java:237) discovered 1 gateway(s)
+WARN  2015-05-06 20:47:01,930 (SarosNet.java:481) could not find gateway device with id: + uuid:f3d2aadd-f7c7-9e6a-3646-4e1cc01aca11::urn:schemas-upnp-org:service:WANIPConnection:1 in the current network environment
+DEBUG 2015-05-06 20:47:02,508 (SarosNet.java:383) 1superrm1@gmail.com/SarosBB048EF3 new connection state == CONNECTED
+DEBUG 2015-05-06 20:47:02,508 (DataTransferManager.java:444) used transport order for the current XMPP connection: [de.fu_berlin.inf.dpp.net.internal.Socks5Transport@618775, de.fu_berlin.inf.dpp.net.internal.IBBTransport@ea8994]
+DEBUG 2015-05-06 20:47:02,554 (SkypeManager.java:286) Refreshing Skype username cache...
+WARN  2015-05-06 20:47:11,852 (StunServiceImpl.java:420) received no response from STUN server stunserver.org/69.172.201.208:3478 at local address /192.168.1.10:0
+WARN  2015-05-06 21:28:15,581 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 21:28:15,610 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-05-06 21:28:15,901 (SarosNet.java:383) 1superrm1@gmail.com/SarosBB048EF3 new connection state == DISCONNECTING
+DEBUG 2015-05-06 21:28:16,057 (SarosNet.java:383)  new connection state == NOT_CONNECTED
+DEBUG 2015-05-06 21:28:16,069 (UPnPServiceImpl.java:295) deleting existing port mappings

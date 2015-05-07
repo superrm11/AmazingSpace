@@ -1,0 +1,77 @@
+package joyStickTest;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.TextArea;
+import java.awt.Button;
+import javax.swing.JSpinner;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class Frame extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Frame frame = new Frame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Frame() {
+		setTitle("Joystick - Arduino");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		TextArea textArea = new TextArea();
+		textArea.setBounds(21, 10, 380, 160);
+		panel.add(textArea);
+		
+		Button button = new Button("Start");
+		button.setBounds(21, 190, 70, 22);
+		panel.add(button);
+		
+		Button button_1 = new Button("Close");
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.exit(0);
+			}
+		});
+		button_1.setBounds(97, 190, 70, 22);
+		panel.add(button_1);
+		
+		Button button_2 = new Button("Enter Number");
+		button_2.setBounds(297, 176, 70, 22);
+		panel.add(button_2);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(307, 204, 60, 37);
+		panel.add(spinner);
+	}
+}

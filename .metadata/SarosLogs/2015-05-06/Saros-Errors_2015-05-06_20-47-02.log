@@ -1,0 +1,8 @@
+WARN  2015-05-06 20:46:42,285 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:46:42,285 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:46:59,434 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:46:59,450 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 20:47:01,930 (SarosNet.java:481) could not find gateway device with id: + uuid:f3d2aadd-f7c7-9e6a-3646-4e1cc01aca11::urn:schemas-upnp-org:service:WANIPConnection:1 in the current network environment
+WARN  2015-05-06 20:47:11,852 (StunServiceImpl.java:420) received no response from STUN server stunserver.org/69.172.201.208:3478 at local address /192.168.1.10:0
+WARN  2015-05-06 21:28:15,581 (NullSarosSession.java:64) unexpected method call
+WARN  2015-05-06 21:28:15,610 (NullSarosSession.java:64) unexpected method call

@@ -1,0 +1,57 @@
+package allEquations;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class Quadratic {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Quadratic window = new Quadratic();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Quadratic() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 642, 248);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 107, 608, 92);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblQuadraticForumlaTool = new JLabel("Quadratic Forumla Tool!");
+		lblQuadraticForumlaTool.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblQuadraticForumlaTool.setBounds(213, 11, 202, 31);
+		frame.getContentPane().add(lblQuadraticForumlaTool);
+	}
+}

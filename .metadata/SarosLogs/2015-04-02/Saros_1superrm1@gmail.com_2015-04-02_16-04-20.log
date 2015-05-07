@@ -1,0 +1,43 @@
+INFO  2015-04-02 16:04:03,740 (Saros.java:256) Starting Saros 13.12.6 running:
+  Java Version: 1.8.0_40
+  Java Vendor: Oracle Corporation
+  Eclipse Runtime Version: 3.10.0.v20140318-2214
+  Operating System: Windows 7 (6.1)
+  Hardware Architecture: x86
+INFO  2015-04-02 16:04:03,771 (XMPPAccountStore.java:103) loaded 1 accounts
+INFO  2015-04-02 16:04:03,786 (PreferenceInitializer.java:53) initializing preference default values
+DEBUG 2015-04-02 16:04:03,786 (DataTransferManager.java:444) used transport order for the current XMPP connection: [de.fu_berlin.inf.dpp.net.internal.Socks5Transport@495414, de.fu_berlin.inf.dpp.net.internal.IBBTransport@111c71c]
+DEBUG 2015-04-02 16:04:03,818 (StreamServiceManager.java:225) StreamServices added:
+  SendFile
+  AudioService
+  VideoSharing
+DEBUG 2015-04-02 16:04:03,864 (SarosAnnotation.java:112) resetting annotation colors
+WARN  2015-04-02 16:04:04,052 (NullSarosSession.java:64) unexpected method call
+WARN  2015-04-02 16:04:04,067 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-04-02 16:04:08,344 (SharedDocumentProvider.java:79) SharedDocumentProvider created by Eclipse
+WARN  2015-04-02 16:04:15,348 (NullSarosSession.java:64) unexpected method call
+WARN  2015-04-02 16:04:15,364 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-04-02 16:04:17,423 (WhiteboardManager.java:108) WhiteboardManager instantiated
+DEBUG 2015-04-02 16:04:17,516 (DocumentRecord.java:93) Added Node: attr(142800505751682520) name=svg
+DEBUG 2015-04-02 16:04:18,000 (UPnPServiceImpl.java:225) performing gateways discovery
+DEBUG 2015-04-02 16:04:18,437 (SarosNet.java:423) started Socks5 proxy on port: 7777 [listening on all interfaces]
+DEBUG 2015-04-02 16:04:18,593 (SarosNet.java:433) found interface addresses: [192.168.1.10, fe80:0:0:0:344c:f76:f1b4:6860%wlan0, 2001:0:5ef5:79fd:8f5:70c:b627:7e38, fe80:0:0:0:8f5:70c:b627:7e38%net4]
+DEBUG 2015-04-02 16:04:18,718 (SarosNet.java:383)  new connection state == CONNECTING
+ERROR 2015-04-02 16:04:18,827 (StunServiceImpl.java:263) error sending STUN request
+java.net.BindException: Cannot assign requested address: Datagram send failed
+	at java.net.DualStackPlainDatagramSocketImpl.socketSend(Native Method)
+	at java.net.DualStackPlainDatagramSocketImpl.send(Unknown Source)
+	at java.net.DatagramSocket.send(Unknown Source)
+	at de.fu_berlin.inf.dpp.net.stun.internal.StunServiceImpl$StunDiscovery$1.run(StunServiceImpl.java:255)
+	at java.lang.Thread.run(Unknown Source)
+INFO  2015-04-02 16:04:18,858 (UPnPServiceImpl.java:237) discovered 1 gateway(s)
+WARN  2015-04-02 16:04:18,858 (SarosNet.java:481) could not find gateway device with id: + uuid:f3d2aadd-f7c7-9e6a-3646-4e1cc01aca11::urn:schemas-upnp-org:service:WANIPConnection:1 in the current network environment
+DEBUG 2015-04-02 16:04:19,888 (SarosNet.java:383) 1superrm1@gmail.com/Saros1CBC00E6 new connection state == CONNECTED
+DEBUG 2015-04-02 16:04:19,888 (DataTransferManager.java:444) used transport order for the current XMPP connection: [de.fu_berlin.inf.dpp.net.internal.Socks5Transport@495414, de.fu_berlin.inf.dpp.net.internal.IBBTransport@111c71c]
+DEBUG 2015-04-02 16:04:20,325 (SkypeManager.java:286) Refreshing Skype username cache...
+WARN  2015-04-02 16:04:28,827 (StunServiceImpl.java:420) received no response from STUN server stunserver.org/127.0.0.1:3478 at local address /192.168.1.10:0
+WARN  2015-04-02 17:32:38,201 (NullSarosSession.java:64) unexpected method call
+WARN  2015-04-02 17:32:38,242 (NullSarosSession.java:64) unexpected method call
+DEBUG 2015-04-02 17:32:38,705 (SarosNet.java:383) 1superrm1@gmail.com/Saros1CBC00E6 new connection state == DISCONNECTING
+DEBUG 2015-04-02 17:32:38,891 (SarosNet.java:383)  new connection state == NOT_CONNECTED
+DEBUG 2015-04-02 17:32:38,893 (UPnPServiceImpl.java:295) deleting existing port mappings

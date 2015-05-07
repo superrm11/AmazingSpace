@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<addCategory
+		id="category_1427838724517"
+		name="Custom"
+		description="Container for custom components"
+		visible="true"
+		open="true"/>
+	<addComponent
+		id="custom_1427838724516"
+		name="Console"
+		description="Creates java.io.Console component."
+		visible="true"
+		class="java.io.Console"
+		category="category_1427838724517"/>
+	<addComponent
+		id="custom_1427843029739"
+		name="ConsoleHandler"
+		description="Creates java.util.logging.ConsoleHandler component."
+		visible="true"
+		class="java.util.logging.ConsoleHandler"
+		category="category_1427838724517"/>
+</commands>
