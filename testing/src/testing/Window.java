@@ -97,7 +97,7 @@ public class Window extends JFrame {
 		int x = (int) spinner.getValue();
 		Component[] cp = con[x].getComponents();
 		for (x = 0; x < cp.length; x++) {
-			
+			textArea.append("\n      " + x + "      " + cp[x]);
 		}
 	}
 }
