@@ -1,5 +1,7 @@
 package testing;
 import net.java.games.input.*;
+import jssc.*;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -8,19 +10,24 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.TextArea;
 import java.awt.Button;
-import javax.swing.JSpinner;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Scanner;
+import javax.swing.JSpinner;
+import javax.swing.JButton;
+
 public class Window extends JFrame {
-	private static TextArea textArea;
-	private static JSpinner spinner; 
-	private static int Submit;
+	static TextArea textArea;
+	static String nl = "\n";
+	static JSpinner spinner;
+	static int Spin = 0;
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
+	//Auto completed by Eclipse===================================================
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,7 +39,28 @@ public class Window extends JFrame {
 				}
 			}
 		});
-		JoyInit();
+		
+		
+		//End Auto completed=======================================================
+		//Code for Joysticks and such==============================================
+		
+		
+		Controller[] c = ControllerEnvironment.getDefaultEnvironment().getControllers();
+		for (int x = 0; x < c.length; x++) {
+			textArea.append(x + "  " + c[x] + nl);
+		}
+		textArea.append("_____Select Controller Number_____" + nl);
+		while(Spin != 1){
+			//do nothing
+		}
+		//TODO make the input from the spinner
+		int SpinNum = (int) spinner.getValue();
+		Component[] co = c[SpinNum].getComponents();
+		for (int x = 0; x < co.length; x++) {
+			textArea.append(x + "   " + co[x] + nl);
+		}
+		textArea.append("_____Select Axis_____" + nl);
+		
 	}
 
 	/**
@@ -55,49 +83,33 @@ public class Window extends JFrame {
 		panel.add(textArea);
 		
 		Button button = new Button("Start");
-		button.setBounds(10, 194, 70, 22);
+		button.addMouseListener(new MouseAdapter() {
+		});
+		button.setBounds(10, 188, 70, 22);
 		panel.add(button);
 		
-		Button button_1 = new Button("Close");
+		Button button_1 = new Button("Exit");
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				System.exit(0);
 			}
 		});
-		button_1.setBounds(86, 194, 70, 22);
+		button_1.setBounds(86, 188, 70, 22);
 		panel.add(button_1);
+		
+		spinner = new JSpinner();
+		spinner.setBounds(201, 176, 70, 39);
+		panel.add(spinner);
 		
 		Button button_2 = new Button("Submit #");
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Submit++;
+				Spin++;
 			}
 		});
-		button_2.setBounds(294, 176, 84, 32);
+		button_2.setBounds(277, 188, 70, 22);
 		panel.add(button_2);
-		
-		spinner = new JSpinner();
-		spinner.setBounds(304, 214, 69, 38);
-		panel.add(spinner);
-	}
-	
-	
-	
-	
-	public static void JoyInit() {
-		Controller[] con = ControllerEnvironment.getDefaultEnvironment().getControllers();
-		for (int x = 0; x < con.length; x++) {
-			textArea.append("\n" + x + "  " + con[x]);
-		}
-		Scanner keyInput =  new Scanner(System.in);
-		textArea.append("-----------------Enter Controller-----------------");
-		while (Submit != 1) {/*do nothing*/}
-		int x = (int) spinner.getValue();
-		Component[] cp = con[x].getComponents();
-		for (x = 0; x < cp.length; x++) {
-			textArea.append("\n      " + x + "      " + cp[x]);
-		}
 	}
 }
