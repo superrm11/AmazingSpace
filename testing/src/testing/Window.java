@@ -8,27 +8,38 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.TextArea;
 import java.awt.Button;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JSpinner;
 import javax.swing.JButton;
 
 public class Window extends JFrame {
+	
+	private static void Delay(int x) throws InterruptedException {
+		Thread.sleep(x);
+	}
+	
+	
 	static TextArea textArea;
 	static String nl = "\n";
 	static JSpinner spinner;
 	static int Spin = 0;
 	private JPanel contentPane;
+	static int dataOut;
 
 	/**
 	 * Launch the application.
+	 * @throws SerialPortException 
+	 * @throws InterruptedException 
 	 */
 	//Auto completed by Eclipse===================================================
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SerialPortException, InterruptedException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -49,18 +60,53 @@ public class Window extends JFrame {
 		for (int x = 0; x < c.length; x++) {
 			textArea.append(x + "  " + c[x] + nl);
 		}
+		
 		textArea.append("_____Select Controller Number_____" + nl);
-		while(Spin != 1){
-			//do nothing
+		
+		while(Spin < 1){
+			Delay(50);
 		}
-		//TODO make the input from the spinner
+		
+		
 		int SpinNum = (int) spinner.getValue();
+		
 		Component[] co = c[SpinNum].getComponents();
+		
 		for (int x = 0; x < co.length; x++) {
 			textArea.append(x + "   " + co[x] + nl);
 		}
+		
 		textArea.append("_____Select Axis_____" + nl);
 		
+		while(Spin < 2){
+			Delay(50);
+		}
+		
+		int axis = (int) spinner.getValue();
+		
+		
+		
+		//Serial Port Activation
+		String[] serial = SerialPortList.getPortNames();
+		for (int x = 0; x < serial.length; x++) {
+			textArea.append(x + "   " + serial[x] + nl);
+		}
+		textArea.append("_____ Select Serial Port _____");
+		while(Spin < 3){
+			Delay(50);
+		}
+		int serialNum = (int) spinner.getValue();
+		SerialPort serialPort = new SerialPort(serial[serialNum]);
+		serialPort.openPort();
+		serialPort.setParams(9600, 8, 1, 0);
+		Delay(2000);
+		while(true) {
+			c[SpinNum].poll();
+			dataOut = (int) ((co[axis].getPollData() + 1) * 90);
+			System.out.println(dataOut);
+			serialPort.writeInt(dataOut);
+			Delay(100);
+		}
 	}
 
 	/**
@@ -82,12 +128,6 @@ public class Window extends JFrame {
 		textArea.setBounds(10, 10, 380, 160);
 		panel.add(textArea);
 		
-		Button button = new Button("Start");
-		button.addMouseListener(new MouseAdapter() {
-		});
-		button.setBounds(10, 188, 70, 22);
-		panel.add(button);
-		
 		Button button_1 = new Button("Exit");
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -95,7 +135,7 @@ public class Window extends JFrame {
 				System.exit(0);
 			}
 		});
-		button_1.setBounds(86, 188, 70, 22);
+		button_1.setBounds(10, 188, 70, 22);
 		panel.add(button_1);
 		
 		spinner = new JSpinner();
