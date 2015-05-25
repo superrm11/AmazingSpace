@@ -105,7 +105,7 @@ public class Window extends JFrame {
 			dataOut = (int) ((co[axis].getPollData() + 1) * 90);
 			System.out.println(dataOut);
 			serialPort.writeInt(dataOut);
-			Delay(100);
+			Delay(5);
 		}
 	}
 
