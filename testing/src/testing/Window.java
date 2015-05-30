@@ -104,13 +104,13 @@ public class Window extends JFrame {
 		while(true) {
 			c[SpinNum].poll();
 			dataOut = (int) ((co[axis].getPollData() + 1) * 90);
-			System.out.println(dataOut);
 			if (co[8].getPollData() == 1F){
 				serialPort.writeInt(200);
 			}else{
 				serialPort.writeInt(dataOut);
 				Delay(5);
 			}
+			
 		}
 		
 	}
