@@ -40,6 +40,7 @@ public class Window extends JFrame {
 	
 	
 	public static void main(String[] args) throws SerialPortException, InterruptedException {
+//		test();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -104,7 +105,21 @@ public class Window extends JFrame {
 			c[SpinNum].poll();
 			dataOut = (int) ((co[axis].getPollData() + 1) * 90);
 			System.out.println(dataOut);
-			serialPort.writeInt(dataOut);
+			if (co[8].getPollData() == 1F){
+				serialPort.writeInt(200);
+			}else{
+				serialPort.writeInt(dataOut);
+				Delay(5);
+			}
+		}
+		
+	}
+	public static void test() throws InterruptedException {
+		Controller[] c = ControllerEnvironment.getDefaultEnvironment().getControllers();
+		Component[] co = c[2].getComponents();
+		while(true){
+			c[2].poll();
+			System.out.println(co[8].getPollData());
 			Delay(5);
 		}
 	}
