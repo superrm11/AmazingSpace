@@ -22,6 +22,8 @@ public class Window2 extends JFrame {
 	private static Choice choice_2;
 	private static Controller[] co = ControllerEnvironment.getDefaultEnvironment().getControllers();
 	private JPanel contentPane;
+	private static boolean breakbool = false;
+	private static boolean finished = false;
 
 	/**
 	 * Launch the application.
@@ -37,9 +39,24 @@ public class Window2 extends JFrame {
 				}
 			}
 		});
+		String[] comp = new String[co.length];
 		for(int x = 0; x < co.length; x++) {
 			choice.add(co[x].getName());
+			comp[x] = 
 		}
+		
+		
+		while(breakbool == false) {
+			if(finished == false){
+				for( int x = 0; x < co.length; x++){
+					Component[]  = co[x].getComponents();
+				}
+				finished = true;
+			}
+			
+			
+		}
+		
 		//TODO    Create for loops to get the names of the axis and com ports (for the choices)
 		
 	}
